@@ -21,7 +21,18 @@ class App extends Component {
       }
       console.log(err);
     }); 
+
+    this.state = {
+      shortID: ""
+    };
+
   }
+
+
+  createPoll(id) {
+    this.state.shortID = id;
+  }
+  
   render() {
     return (
       <div style={{ backgroundColor: "#1976d2", minHeight: "100vh" }}>
@@ -31,7 +42,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route path="/About" component={About} />
-              <Route path="/Results" component={PrefPage} />
+              {/* <Route path="/Results" component={PrefPage} /> */}
+              <Route path="/pref/" component={PrefPage} />
             </Switch>
           </Container>
         </Router>
