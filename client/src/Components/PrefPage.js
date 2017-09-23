@@ -65,7 +65,8 @@ export default class PrefPage extends Component {
                             food: this.state.thirdPreferred,
                             weight: 1
                         }     
-                    }
+                    },
+                    past: []
                 }
             });
         } finally {

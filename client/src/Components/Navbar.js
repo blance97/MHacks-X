@@ -18,7 +18,7 @@ export default class Navbar extends Component {
         return (
 
             <div style={{ marginBottom: 25 }}>
-                <Menu size='large'>
+                <Menu size='large' widths={3}>
                     <Menu.Item as={Link} to="/">
                         <Icon name='home' size="large" />
                         <text>Home</text>
@@ -29,10 +29,10 @@ export default class Navbar extends Component {
                         <text>About</text>
                     </Menu.Item>
 
-                    <Menu.Item as={Link} to= {`/pref/${shortid.generate()}`}> 
+                    <Menu.Item as={Link} to={`/pref/${shortid.generate()}`}>
                         <Icon name="add" size="large" />
                         <text>New Poll</text>
-                        </Menu.Item>
+                    </Menu.Item>
                 </Menu>
                 <Divider fitted />
             </div>
