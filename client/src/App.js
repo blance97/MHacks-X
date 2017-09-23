@@ -9,7 +9,16 @@ import PrefPage from './Components/PrefPage';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      shortID: ""
+    };
   }
+
+
+  createPoll(id) {
+    this.state.shortID = id;
+  }
+  
   render() {
     return (
       <div style={{ backgroundColor: "#967bb6", minHeight: "100vh" }}>
@@ -18,7 +27,7 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route path="/" component={PrefPage} />
+              <Route path="/pref/" component={PrefPage} />
             </Switch>
           </div>
         </Router>
