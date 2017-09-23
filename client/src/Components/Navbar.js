@@ -31,8 +31,8 @@ export default class Navbar extends Component {
 
                     <Menu.Item as={Link} to= {`/pref/${shortid.generate()}`}> 
                         <Icon name="add" size="large" />
-                        Create New Poll
-                    </Menu.Item>
+                        <text>New Poll</text>
+                        </Menu.Item>
                 </Menu>
                 <Divider fitted />
             </div>

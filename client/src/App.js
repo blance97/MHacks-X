@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
+import './App.css';
 import logo from './logo.svg';
 import Navbar from './Components/Navbar';
 import HomePage from './Components/HomePage';
@@ -21,15 +22,15 @@ class App extends Component {
         message: error.message
       }
       console.log(err);
-    }); 
+    });
 
   }
-  
+
   render() {
     return (
       <div style={{ backgroundColor: "#1976d2", minHeight: "100vh" }}>
         <Router>
-          <Container>
+          <Container  >
             <Navbar />
             <Switch>
               <Route exact path="/" component={HomePage} />
