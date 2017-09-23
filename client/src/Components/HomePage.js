@@ -16,7 +16,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 <center>
-                    <h1 style={{ color: "white" }}>sudo apt-get food</h1>
+                    <h1 style={{ color: "white" }}>Foodphoria</h1>
                     <img src={require("../Photos/spinner.gif")}></img>
                     <br/>
                     <Button secondary size='huge' onClick ={ () => this.setState({redirect: true})}>

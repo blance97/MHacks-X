@@ -12,7 +12,8 @@ export default class Results extends Component {
             modalState: false,
             details: {},
             loadingPlaces: false,
-            error: ""
+            error: "",
+            past: []
         }
 
         this.modifyDisplayValues = this.modifyDisplayValues.bind(this)
@@ -74,16 +75,19 @@ export default class Results extends Component {
                 fetch('http://35.0.130.65:5000/recm', {
                     method: "POST",
                     body: JSON.stringify(
-                        { types: listedPlaces, location: { lat: position.coords.latitude, long: position.coords.longitude }, past: [] }
+                        { types: listedPlaces, location: { lat: position.coords.latitude, long: position.coords.longitude }, past: this.state.past }
                     )
                 }).then((res) => res.json())
                     .then((responseJson) => {
                         this.setState({ details: responseJson }, () => this.setState({ loadingPlaces: false, modalState: true }));
+                        const detailsShortcut = this.state.details.placeInfo.result
+                        this.setState({past: [...this.state.past, detailsShortcut.name]})
                     }).catch((error) => {
                         console.log(error);
                         this.setState({ loadingPlaces: false, error: "An unexpected error has occured. Please try again" });
                     });
             })
+
     }
 
     handleFocus(event) {
