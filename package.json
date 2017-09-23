@@ -1,0 +1,10 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+  },
+  "scripts": {
+    "postinstall":"cd client && npm i && npm start"
+  }
+}
