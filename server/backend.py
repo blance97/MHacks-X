@@ -105,16 +105,5 @@ def sortStuff(json):
     except:
         return 0
 
-@app.route('/prefs', methods=['POST'])
-def prefs():
-    pref = mongo.db.pref
-    name = request.json['name']
-    prefs = request.json['prefs']
-    rating = request.json['rating']
-    pref_id = pref.insert({'name': name, 'prefs': prefs, 'rating': rating})
-    new_pref = pref.find_one({'_id': pref_id})
-    output = {'name' : new_pref['name'], 'prefs': new_pref['prefs'], 'rating': new_pref['rating']}
-    return jsonify({'result': output})
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
