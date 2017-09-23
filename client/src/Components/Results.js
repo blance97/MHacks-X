@@ -139,7 +139,7 @@ export default class Results extends Component {
                     size='small'
                 >
                     <Modal.Content>
-                        <DetailedPlace details={this.state.details} />
+                        <DetailedPlace details={this.state.details} prefs={this.state.choices.slice(0, 4)} />
                     </Modal.Content>
                 </Modal>
             </div>

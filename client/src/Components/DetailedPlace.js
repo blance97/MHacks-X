@@ -4,8 +4,26 @@ import { Header, Divider, Dimmer, Loader, Segment, Rating } from 'semantic-ui-re
 export default class DetailedPlace extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props);
+        this.state = {
+            voted: false
+        }
     }
+    sendPrefs(e, data) {
+        console.log(data);
+        const details = this.props.details.placeInfo.result;
+        console.log(details);
+        const names = this.props.prefs.map((element) => {
+            return element.food
+        })
+        this.setState({ voted: true });
+        fetch('http://35.0.130.65:5000/prefs', {
+            method: "POST",
+            body: JSON.stringify(
+                { name: details.name, prefs: names, rprefs: this.props.details.rprefs, grating: details.rating, plevel: this.props.details.plevel, rating: data.rating }
+            )
+        })
+    }
+
     render() {
         const details = this.props.details.placeInfo.result;
         return (
@@ -45,7 +63,7 @@ export default class DetailedPlace extends Component {
                         <Divider horizontal></Divider>
                     </div>
                     <center><Header as="h3">Rate this suggestion:</Header></center>
-                    <Rating maxRating={5} defaultRating={0} icon='star' size='massive' />
+                    <Rating disabled={this.state.voted} maxRating={5} defaultRating={0} onRate={(e, data) => this.sendPrefs(e, data)} icon='star' size='massive' />
                 </div>
 
 
