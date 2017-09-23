@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import base from '../rebase';
-import { Progress, Divider, Button } from 'semantic-ui-react';
+import { Progress, Divider, Button, Input } from 'semantic-ui-react';
 export default class Results extends Component {
     constructor(props) {
         super(props);
@@ -81,6 +81,10 @@ and arg of a tuple called location
             })
     }
 
+    handleFocus(event) {
+        event.target.select();
+    }
+
     render() {
         console.log(this.state)
         const choiceDisplay = this.state.choices.map((element, i) => {
@@ -110,6 +114,14 @@ and arg of a tuple called location
                         <Button size='huge' color='teal' onClick={() => this.getSuggestedPlaces()}>Give me a recommendation!</Button>
                     </center>
                 </div>
+                <center>
+
+                    <div style={{ marginTop: 20, width: '200px', backgroundColor: '#607d8b', borderRadius: 5  }}>
+                        <h3 style={{ width: '200px', color: '#e0e0e0' }}>Share with your friends!</h3>
+                        <Input onFocus={this.handleFocus}
+                            value={`https://${window.location.hostname}:${window.location.port}/pref/${this.props.match.params.id}`} width='200px' />
+                    </div>
+                </center>
                 {/* <Modal
                     closeIcon
                     open={this.state.modalOpen}
@@ -120,7 +132,7 @@ and arg of a tuple called location
                         <DetailedPlace details={} />
                     </Modal.Content>
                 </Modal> */}
-            </div>
+            </div >
         )
     }
 }
