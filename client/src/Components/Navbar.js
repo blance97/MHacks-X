@@ -1,35 +1,40 @@
 import React, { Component } from 'react';
-import { Icon, Menu } from 'semantic-ui-react';
+import { Icon, Menu, Container, Divider } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
-    constructor(props){
-      super(props);
-      this.state = { activeItem: 'gamepad' }
-      this.handleItemClick = this.handleItemClick.bind(this);
+    constructor(props) {
+        super(props);
+        this.state = { activeItem: 'gamepad' }
+        this.handleItemClick = this.handleItemClick.bind(this);
     }
-    handleItemClick(e, data){
-        this.setState({activeItem: data.name})
+    handleItemClick(e, data) {
+        this.setState({ activeItem: data.name })
 
-    }  
+    }
     render() {
         const { activeItem } = this.state
         return (
-            <Menu icon='labeled'>
-                <Menu.Item name='gamepad' active={activeItem === 'gamepad'} onClick={this.handleItemClick}>
-                    <Icon name='gamepad' />
-                    Games
-            </Menu.Item>
 
-                <Menu.Item name='video camera' active={activeItem === 'video camera'} onClick={this.handleItemClick}>
-                    <Icon name='video camera' />
-                    Channels
-            </Menu.Item>
+            <div style={{ marginBottom: 25 }}>
+                <Menu size='large'>
+                    <Menu.Item as={Link} to="/">
+                        <Icon name='home' size="large" />
+                        <text>Home</text>
+                    </Menu.Item>
 
-                <Menu.Item name='video play' active={activeItem === 'video play'} onClick={this.handleItemClick}>
-                    <Icon name='video play' />
-                    Videos
-            </Menu.Item>
-            </Menu>
+                    <Menu.Item as={Link} to="/about">
+                        <Icon name='question circle' size="large" />
+                        <text>About</text>
+                    </Menu.Item>
+
+                    <Menu.Item as={Link} to="/createPoll">
+                        <Icon name="add" size="large" />
+                        Create New Poll
+                    </Menu.Item>
+                </Menu>
+                <Divider fitted />
+            </div>
         )
     }
 }

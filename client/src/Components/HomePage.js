@@ -7,11 +7,13 @@ export default class HomePage extends Component {
         super(props);
     }
     render() {
+        let hi = <img src={require("../Photos/spinner.gif")}></img>
         return (
             <div>
-                    <h1>sudo apt get food</h1>
-
-
+                <center>
+                    <h1 style={{ color: "white" }}>sudo apt get food</h1>
+                    {hi}
+                </center>
             </div>
 
         )
