@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 import Navbar from './Components/Navbar';
 import HomePage from './Components/HomePage';
+import PrefPage from './Components/PrefPage';
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={HomePage} />
+              <Route path="/" component={PrefPage} />
             </Switch>
           </div>
         </Router>
