@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import Navbar from './Components/Navbar';
 import HomePage from './Components/HomePage';
 import About from './Components/About';
+import Results from './Components/Results'
 import PrefPage from './Components/PrefPage';
 import base from './rebase';
 import firebase from 'firebase';
@@ -22,15 +23,6 @@ class App extends Component {
       console.log(err);
     }); 
 
-    this.state = {
-      shortID: ""
-    };
-
-  }
-
-
-  createPoll(id) {
-    this.state.shortID = id;
   }
   
   render() {
@@ -41,9 +33,9 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route path="/About" component={About} />
-              {/* <Route path="/Results" component={PrefPage} /> */}
-              <Route path="/pref/" component={PrefPage} />
+              <Route path="/about" component={About} />
+              <Route path="/pref/:id" component={PrefPage} />
+              <Route path="/results/:id" component={Results} />
             </Switch>
           </Container>
         </Router>

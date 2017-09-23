@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, Menu, Container, Divider } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import shortid from 'shortid';
 
 export default class Navbar extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class Navbar extends Component {
                         <text>About</text>
                     </Menu.Item>
 
-                    <Menu.Item as={Link} to="/createPoll">
+                    <Menu.Item as={Link} to= {`/pref/${shortid.generate()}`}> 
                         <Icon name="add" size="large" />
                         Create New Poll
                     </Menu.Item>
