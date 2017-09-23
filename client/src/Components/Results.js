@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import base from '../rebase';
-import { Progress, Divider, Button, Modal, Loader, Dimmer } from 'semantic-ui-react';
+import { Progress, Divider, Button, Modal, Loader, Dimmer, Input } from 'semantic-ui-react';
 import DetailedPlace from "./DetailedPlace";
 
 export default class Results extends Component {
@@ -86,6 +86,10 @@ export default class Results extends Component {
             })
     }
 
+    handleFocus(event) {
+        event.target.select();
+    }
+
     render() {
         console.log(this.state)
         const choiceDisplay = this.state.choices.map((element, i) => {
@@ -121,6 +125,13 @@ export default class Results extends Component {
                 <Dimmer active={this.state.loadingPlaces}>
                     <Loader />
                 </Dimmer>
+                <center>
+                    <div style={{ marginTop: 20, width: '200px', backgroundColor: '#607d8b', borderRadius: 5 }}>
+                        <h3 style={{ width: '200px', color: '#e0e0e0' }}>Share with your friends!</h3>
+                        <Input onFocus={this.handleFocus}
+                            value={`https://${window.location.hostname}:${window.location.port}/pref/${this.props.match.params.id}`} width='200px' />
+                    </div>
+                </center>
                 <Modal
                     closeIcon
                     open={this.state.modalState}
