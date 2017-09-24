@@ -8,6 +8,7 @@ import HomePage from './Components/HomePage';
 import About from './Components/About';
 import Results from './Components/Results'
 import PrefPage from './Components/PrefPage';
+import NotFoundPage from './Components/NotFoundPage';
 import firebase from 'firebase';
 
 
@@ -36,6 +37,7 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/pref/:id" component={PrefPage} />
               <Route path="/results/:id" component={Results} />
+              <Route component={NotFoundPage} />
             </Switch>
           </Container>
         </Router>
