@@ -95,7 +95,6 @@ export default class Results extends Component {
     }
 
     render() {
-        console.log(this.state)
         const choiceDisplay = this.state.choices.map((element, i) => {
             let percentage = element.weightedSum / this.state.totalWeight;
             return (
@@ -108,7 +107,6 @@ export default class Results extends Component {
             )
         })
 
-        console.log(this.state.choices);
         return (
             <div>
                 <div style={{ backgroundColor: "#fafafa", borderRadius: 5 }}>

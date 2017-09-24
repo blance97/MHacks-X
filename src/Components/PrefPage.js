@@ -107,7 +107,7 @@ export default class PrefPage extends Component {
                         </div>
                     </div>
                     <Divider horizontal />
-                    <Button disabled={localStorage.getItem(`VotedFor(${this.props.match.params.id})`) === this.props.match.params.id} color='teal' onClick={() => this.submitPref()}>Submit Preferences</Button>
+                    <Button disabled={localStorage.getItem(`VotedFor(${this.props.match.params.id})`) === this.props.match.params.id || this.state.firstPreferred === ""} color='teal' onClick={() => this.submitPref()}>Submit Preferences</Button>
                     <Divider />
                     {this.state.redirect && <Redirect push to={`/results/${this.props.match.params.id}`} />}
                 </div>
