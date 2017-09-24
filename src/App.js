@@ -8,7 +8,6 @@ import HomePage from './Components/HomePage';
 import About from './Components/About';
 import Results from './Components/Results'
 import PrefPage from './Components/PrefPage';
-import base from './rebase';
 import firebase from 'firebase';
 
 
