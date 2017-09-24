@@ -32,7 +32,7 @@ export default class DetailedPlace extends Component {
                     <Header as='h1' style={{ marginBottom: 10 }}>
                         {details.name}
                         <Header.Subheader>
-                            {details.formatted_address}
+                            <a href={`https://maps.google.com/?q=${details.formatted_address}`} target="_blank">{details.formatted_address}</a>
                         </Header.Subheader>
                         <Header.Subheader>
                             {details.formatted_phone_number}
