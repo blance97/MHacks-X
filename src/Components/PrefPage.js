@@ -15,6 +15,11 @@ export default class PrefPage extends Component {
             thirdPreferred: ""
         }
     }
+    componentDidMount() {
+        if (localStorage.getItem(`VotedFor(${this.props.match.params.id})`) === this.props.match.params.id) {
+            this.setState({ redirect: true });
+        }
+    }
 
     foodPicked(e, data) {
         this.setState({ [data.name]: data.value })
