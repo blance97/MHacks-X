@@ -16,14 +16,13 @@ export default class HomePage extends Component {
         return (
             <div>
                 <center>
-                    <h1 style={{ color: "white" }}>Foodphoria</h1>
-                    <img src={require("../Photos/spinner.gif")}></img>
-                    <br/>
-                    <Button secondary size='huge' onClick ={ () => this.setState({redirect: true})}>
+                    <img style={{ width: "60%" }} alt="Food Logo" src={require("../Photos/logo.png")}></img>
+                    <br />
+                    <Button secondary size='huge' onClick={() => this.setState({ redirect: true })}>
                         Get Started
                         <Icon name='right arrow' />
                     </Button>
-                    {this.state.redirect && <Redirect push to = {`/pref/${shortid.generate()}`} />}
+                    {this.state.redirect && <Redirect push to={`/pref/${shortid.generate()}`} />}
                 </center>
             </div>
 
