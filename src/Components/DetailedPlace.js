@@ -48,14 +48,14 @@ export default class DetailedPlace extends Component {
                     </ul>
                     <Divider fitted />
                     <center><Header as="h3">Schedule</Header></center>
-                    {details.weekday_text !== undefined && <div>
-                        <ul>
+                    {details.opening_hours !== undefined && <div>
+                        {details.opening_hours.weekday_text !== undefined && <ul>
                             {details.opening_hours.weekday_text.map((element, i) => {
                                 return (<li key={i}>
                                     {element}
                                 </li>)
                             })}
-                        </ul>
+                        </ul>}
                     </div>}
                     <Divider />
                     <div>
