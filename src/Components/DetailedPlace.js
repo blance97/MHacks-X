@@ -44,7 +44,7 @@ export default class DetailedPlace extends Component {
                         <li>Distance: {this.props.details.dist} mi</li>
                         <li>Rating: {details.rating}</li>
                         <li>Price Level: {details.price_level}</li>
-                        <li>Status: {details.opening_hours.open_now === true ? "Open" : "Closed"}</li>
+                        <li>Status: "Open"</li>
                     </ul>
                     <Divider fitted />
                     <center><Header as="h3">Schedule</Header></center>
