@@ -67,7 +67,7 @@ export default class Results extends Component {
     getSuggestedPlaces() {
         this.setState({ loadingPlaces: true, error: "" })
         const listedPlaces = this.state.choices.slice(0, 4).map((element, i) => {
-            return { type: element.food, weight: element.weightedSum / this.state.totalWeight * 100 };
+            return { type: element.food, weight: element.weightedSum / this.state.totalWeight};
         })
         navigator.geolocation.getCurrentPosition(
             (position) => {
