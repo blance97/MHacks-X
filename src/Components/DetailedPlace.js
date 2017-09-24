@@ -16,7 +16,7 @@ export default class DetailedPlace extends Component {
             return element.food
         })
         this.setState({ voted: true });
-        fetch('http://35.0.130.65:5000/prefs', {
+        fetch('https://foodphoriadb.herokuapp.com/prefs', {
             method: "POST",
             body: JSON.stringify(
                 { name: details.name, prefs: names, rprefs: this.props.details.rprefs, grating: details.rating, plevel: this.props.details.plevel, rating: data.rating }

@@ -72,7 +72,7 @@ export default class Results extends Component {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 // console.log({ types: listedPlaces, location: { lat: position.coords.latitude, long: position.coords.longitude } })
-                fetch('http://35.0.130.65:5000/recm', {
+                fetch('https://foodphoriadb.herokuapp.com/recm', {
                     method: "POST",
                     body: JSON.stringify(
                         { types: listedPlaces, location: { lat: position.coords.latitude, long: position.coords.longitude }, past: this.state.past }
